@@ -128,13 +128,10 @@ VALUES
 
 ('108', 'Boutique Lienzo Estético', 'Mauricio Galván', '212 Calle Niebla, entre Laureles y Camelias', '9614578201', 'Tuxtla Gutiérrez', 'Chiapas');
 
+
 select * from empleados;
 
-
-
 select * from sucursales;
-
-
 
 SELECT 
     e.nombre AS nombre_empleado,
@@ -155,12 +152,8 @@ JOIN
     sucursales s ON CAST(e.sucursal AS VARCHAR(255)) = CAST(s.nombre_sucursal AS VARCHAR(255));
 
 
-
-
 select distinct edad 
 from empleados
-
-
 
 select nombre, apellido_paterno, apellido_materno, sucursal, encargado_sucursal
 from empleados;
