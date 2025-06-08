@@ -1,0 +1,169 @@
+--Tabla empleados
+CREATE TABLE empleados (
+    nombre text,
+    apellido_paterno text,
+    apellido_materno text,
+	direccion text,
+	numero_telefono text,
+	edad int,
+	sucursal text,
+	encargado_sucursal text,
+	correo_electronico text,
+	contraseña text)
+	;
+
+--Tabla sucursales
+CREATE TABLE sucursales (
+	numero_sucursal int,
+    nombre_sucursal text,
+	encargado_sucursal text,
+	direccion_sucursal text,
+	numero_telefono_sucursal text,
+	ciudad_sucursal text,
+	estado_sucursal text)
+	;
+
+
+
+-- Insertamos información en la tabla "Empleados"
+INSERT INTO empleados (nombre, apellido_paterno, apellido_materno, direccion, numero_telefono, edad, sucursal, encargado_sucursal, correo_electronico, contraseña) VALUES
+
+('Santiago', 'Herrera', 'Luna', '101 Avenida Central, Ciudad Prisma, Estado Aurora','6611234567','29','Boutique Estilo Vanguardia','Andrea Molina','santiago.herrera@boutique.com','Clavel10'),
+
+('Valeria', 'Torres', 'Meza', '202 Calle Jardín, Pueblo Brisa, Provincia Real','6622345678','36','Boutique Estilo Vanguardia','Andrea Molina','valeria.torres@boutique.com','Solana22'),
+
+('Leonardo', 'Nava', 'Cervantes', '303 Boulevard Oceánico, Villa Horizonte, Nación de las Nubes','6633456789','42','Boutique Estilo Vanguardia','Andrea Molina','leonardo.nava@boutique.com','Lirio48'),
+
+('Andrea', 'Molina', 'Fierro', '404 Camino del Alba, Ciudad Naciente, Reino de las Estrellas','6644567890','33','Boutique Estilo Vanguardia','Andrea Molina','andrea.molina@boutique.com','Brisa90'),
+
+('Camila', 'Zamora', 'Reyes', '505 Callejón de la Niebla, Pueblo Eterno, Tierra Celeste','6655678901','30','Boutique Estilo Vanguardia','Andrea Molina','camila.zamora@boutique.com','Nube33'),
+
+('Matias', 'Delgado', 'Quiñones', '606 Avenida Aurora, Ciudad Cristal, Provincia del Alba','6666789012','45','Boutique Urban Street','Sebastián Cruz','matias.delgado@boutique.com','Cometa88'),
+
+('Luciana', 'Cortez', 'Aguirre', '707 Calle del Viento, Villa Arcoíris, Estado Soñado','6677890123','38','Boutique Urban Street','Sebastián Cruz','luciana.cortez@boutique.com','Rosa11'),
+
+('Sebastián', 'Cruz', 'Ortega', '808 Boulevard del Sol, Pueblo Horizonte, Nación del Mar','6688901234','41','Boutique Urban Street','Sebastián Cruz','sebastian.cruz@boutique.com','Guitarra65'),
+
+('Renata', 'Fuentes', 'Espino', '909 Carretera Central, Ciudad del Encanto, Estado Épico','6699012345','47','Boutique Urban Street','Sebastián Cruz','renata.fuentes@boutique.com','Estrella18'),
+
+('Diego', 'Salas', 'Beltrán', '123 Avenida del Cielo, Pueblo de la Esperanza, Reino Azul','6700123456','34','Boutique Urban Street','Sebastián Cruz','diego.salas@boutique.com','Planeta77'),
+
+('Paola', 'López', 'Montiel', '234 Calle de la Armonía, Ciudad del Alba, Tierra del Norte','6711234567','29','Boutique Arte & Estilo','Mariana Gil','paola.lopez@boutique.com','Naranja29'),
+
+('Mariana', 'Gil', 'Durán', '345 Boulevard del Lago, Villa Serena, Nación del Silencio','6722345678','40','Boutique Arte & Estilo','Mariana Gil','mariana.gil@boutique.com','Reloj36'),
+
+('Iván', 'Rivas', 'Camacho', '456 Camino de la Brisa, Pueblo Sol, Reino de la Paz','6733456789','39','Boutique Arte & Estilo','Mariana Gil','ivan.rivas@boutique.com','Gato24'),
+
+('Daniel', 'Peña', 'Nieto', '567 Calle Nueva, Ciudad del Valle, Provincia Clara','6744567890','50','Boutique Arte & Estilo','Mariana Gil','daniel.pena@boutique.com','Tronco51'),
+
+('Ana', 'Gonzales', 'Tapia', '678 Avenida del Bosque, Pueblo Claro, Estado Ilusión','6755678901','31','Boutique Arte & Estilo','Mariana Gil','ana.gonzales@boutique.com','Cristal19'),
+
+('Maximiliano', 'Soto', 'Carrillo', '789 Camino del Faro, Ciudad Brillante, Nación del Alba','6766789012','44','Boutique Inspiración Moderna','Estefanía Rojas','maximiliano.soto@boutique.com','Amanecer66'),
+
+('Fernanda', 'Rangel', 'Saavedra', '890 Calle del Sauce, Pueblo Claro, Reino de la Luz','6777890123','36','Boutique Inspiración Moderna','Estefanía Rojas','fernanda.rangel@boutique.com','Mariposa73'),
+
+('Estefanía', 'Rojas', 'Lozano', '901 Boulevard del Horizonte, Villa Cielo, Estado Sereno','6788901234','42','Boutique Inspiración Moderna','Estefanía Rojas','estefania.rojas@boutique.com','Gema12'),
+
+('Álvaro', 'Bermúdez', 'Ocampo', '135 Carretera del Río, Ciudad de la Fortuna, Provincia Radiante','6799012345','39','Boutique Inspiración Moderna','Estefanía Rojas','alvaro.bermudez@boutique.com','Bambú17'),
+
+('Jimena', 'Miranda', 'Barajas', '246 Calle de los Colores, Pueblo Arcoíris, Nación Encantada','6800123456','35','Boutique Inspiración Moderna','Estefanía Rojas','jimena.miranda@boutique.com','Faro58'),
+
+('Héctor', 'Vega', 'Serrano', '357 Avenida del Eco, Villa del Alba, Estado Soñador','6811234567','46','Boutique Aura Contemporánea','Alejandra Córdova','hector.vega@boutique.com','Montaña81'),
+
+('Alejandra', 'Córdova', 'Román', '468 Camino del Silencio, Ciudad Neblina, Reino de la Calma','6822345678','37','Boutique Aura Contemporánea','Alejandra Córdova','alejandra.cordova@boutique.com','Solsticio21'),
+
+('Cristian', 'Mendoza', 'Treviño', '579 Boulevard de la Esperanza, Pueblo Lirio, Provincia Clara','6833456789','38','Boutique Aura Contemporánea','Alejandra Córdova','cristian.mendoza@boutique.com','Puente45'),
+
+('Julia', 'Arce', 'Sánchez', '680 Calle de las Aves, Villa Azul, Nación de la Tranquilidad','6844567890','41','Boutique Aura Contemporánea','Alejandra Córdova','julia.arce@boutique.com','Orilla77'),
+
+('Francisco', 'Benítez', 'Páez', '791 Avenida de la Niebla, Ciudad Luminosa, Reino Silvestre','6855678901','48','Boutique Aura Contemporánea','Alejandra Córdova','francisco.benitez@boutique.com','Valle92'),
+
+('Isabela', 'Guerrero', 'Muñiz', '802 Calle del Alba, Pueblo Esperanza, Estado Cálido','6866789012','33','Boutique Raíces y Estilo','Carlos Méndez','isabela.guerrero@boutique.com','Nido53'),
+
+('Carlos', 'Méndez', 'Zavala', '913 Camino del Tiempo, Ciudad Épica, Provincia Serenidad','6877890123','51','Boutique Raíces y Estilo','Carlos Méndez','carlos.mendez@boutique.com','Eco39'),
+
+('Nicole', 'Rosales', 'Macías', '124 Boulevard de la Armonía, Villa Cálida, Reino Encantado','6888901234','34','Boutique Raíces y Estilo','Carlos Méndez','nicole.rosales@boutique.com','Mirador6'),
+
+('Elías', 'Campos', 'Delgado', '235 Avenida del Recuerdo, Pueblo Noble, Estado Celeste','6899012345','49','Boutique Raíces y Estilo','Carlos Méndez','elias.campos@boutique.com','Cumbre31'),
+
+('Bianca', 'Silva', 'Cuevas', '346 Calle del Jardín, Ciudad del Horizonte, Nación Serena','6900123456','40','Boutique Raíces y Estilo','Carlos Méndez','bianca.silva@boutique.com','Arena95'),
+
+('Gael', 'Navarrete', 'Rosado', '457 Camino del Sol, Ciudad Prisma, Provincia Celeste','6911234567','43','Boutique Diseño Único','Lorena Salgado','gael.navarrete@boutique.com','Bruma64'),
+
+('Lorena', 'Salgado', 'Armenta', '568 Avenida de los Sueños, Villa Brillante, Nación del Alba','6922345678','39','Boutique Diseño Único','Lorena Salgado','lorena.salgado@boutique.com','Nube84'),
+
+('Emilia', 'Acosta', 'Valverde', '679 Calle del Horizonte, Pueblo Claro, Reino de la Lluvia','6933456789','36','Boutique Diseño Único','Lorena Salgado','emilia.acosta@boutique.com','Flor13'),
+
+('Ricardo', 'Zarate', 'Moya', '780 Boulevard del Eco, Ciudad Serena, Estado Radiante','6944567890','42','Boutique Diseño Único','Lorena Salgado','ricardo.zarate@boutique.com','Ola20'),
+
+('Tatiana', 'Mejía', 'Quintero', '891 Carretera del Silencio, Pueblo Arcoíris, Tierra del Norte','6955678901','31','Boutique Diseño Único','Lorena Salgado','tatiana.mejia@boutique.com','Tierra38'),
+
+('Ivanna', 'Guerra', 'Paniagua', '912 Calle de la Luna, Ciudad Estrella, Nación de Cristal','6966789012','27','Boutique Lienzo Estético','Mauricio Galván','ivanna.guerra@boutique.com','Viento14'),
+
+('Mauricio', 'Galván', 'Segura', '123 Avenida de la Paz, Villa del Alba, Estado Encantado','6977890123','46','Boutique Lienzo Estético','Mauricio Galván','mauricio.galvan@boutique.com','Fénix33'),
+
+('Dalia', 'Lara', 'Espinosa', '234 Boulevard del Recuerdo, Pueblo del Valle, Reino de la Esperanza','6988901234','38','Boutique Lienzo Estético','Mauricio Galván','dalia.lara@boutique.com','Alondra52'),
+
+('Tomás', 'Quiñonez', 'Morales', '345 Camino del Mar, Ciudad del Cielo, Provincia Serena','6999012345','50','Boutique Lienzo Estético','Mauricio Galván','tomas.q@boutique.com','Jardín90'),
+
+('Ximena', 'Salinas', 'Ponce', '456 Calle de la Estrella, Villa Neblina, Nación Soñada','7000123456','35','Boutique Lienzo Estético','Mauricio Galván','ximena.salinas@boutique.com','Lago71');
+
+
+-- Insertamos la informacion en la tabla "Sucursales" 
+INSERT INTO sucursales (numero_sucursal, nombre_sucursal, encargado_sucursal, direccion_sucursal, numero_telefono_sucursal, ciudad_sucursal, estado_sucursal)
+VALUES
+('101', 'Boutique Estilo Vanguardia', 'Andrea Molina', '500 Calle Magnolia, entre Jacarandas y Rosales', '8187654321', 'Guadalajara', 'Jalisco'),
+
+('102', 'Boutique Urban Street', 'Sebastián Cruz', '812 Avenida Revolución, entre Flores Magón y Arteaga', '5512345678', 'Tijuana', 'Baja California'),
+
+('103', 'Boutique Arte & Estilo', 'Mariana Gil', '301 Calle del Lago, entre Montes de Oca y Reforma', '4427658901', 'Querétaro', 'Querétaro'),
+
+('104', 'Boutique Inspiración Moderna', 'Estefanía Rojas', '145 Avenida Bosques, entre Cedros y Encinos', '6648762345', 'Ensenada', 'Baja California'),
+
+('105', 'Boutique Aura Contemporánea', 'Alejandra Córdova', '678 Camino del Sol, entre Amapolas y Pinos', '7229876543', 'Toluca', 'Estado de México'),
+
+('106', 'Boutique Raíces y Estilo', 'Carlos Méndez', '909 Boulevard de la Luna, entre Girasoles y Manantial', '4491238765', 'Aguascalientes', 'Aguascalientes'),
+
+('107', 'Boutique Diseño Único', 'Lorena Salgado', '743 Avenida Horizonte, entre Sauces y Azucenas', '6674321987', 'Mazatlán', 'Sinaloa'),
+
+('108', 'Boutique Lienzo Estético', 'Mauricio Galván', '212 Calle Niebla, entre Laureles y Camelias', '9614578201', 'Tuxtla Gutiérrez', 'Chiapas');
+
+select * from empleados;
+
+
+
+select * from sucursales;
+
+
+
+SELECT 
+    e.nombre AS nombre_empleado,
+    e.apellido_paterno,
+    e.apellido_materno,
+    e.edad,
+    e.correo_electronico,
+    e.sucursal,
+    s.numero_sucursal,
+    s.encargado_sucursal,
+    s.direccion_sucursal,
+    s.numero_telefono_sucursal,
+    s.ciudad_sucursal,
+    s.estado_sucursal
+FROM 
+    empleados e
+JOIN 
+    sucursales s ON CAST(e.sucursal AS VARCHAR(255)) = CAST(s.nombre_sucursal AS VARCHAR(255));
+
+
+
+
+select distinct edad 
+from empleados
+
+
+
+select nombre, apellido_paterno, apellido_materno, sucursal, encargado_sucursal
+from empleados;
+
+select numero_sucursal,nombre_sucursal, encargado_sucursal, ciudad_sucursal,estado_sucursal
+from sucursales;
