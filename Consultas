@@ -1,0 +1,123 @@
+
+select * from [dbo].[factura]
+order by fecha asc
+
+select * from [dbo].[producto]
+select * from [dbo].[detalle]
+select * from [dbo].[cliente]
+select * from [dbo].[categoria]
+
+--La cantidad de clientes en el año 2021.
+select distinct id_cliente,fecha 
+from [dbo].[factura]
+where fecha >= '2021-01-01' and fecha <= '2021-12-31'
+order by fecha asc
+;
+
+select count(id_cliente)
+from [dbo].[factura]
+where fecha >= '2021-01-01' and fecha <= '2021-12-31'
+;
+
+
+--seleccionar los clientes de 2022 (hasta el momento) 
+select id_cliente,fecha 
+from [dbo].[factura]
+where fecha >= '2022-01-01'
+order by fecha asc
+;
+
+select count(id_cliente)
+from [dbo].[factura]
+where fecha >= '2022-01-01'
+;
+
+
+--Seleccionar los clientes de diciembre de 2021
+select id_cliente,fecha 
+from [dbo].[factura]
+where fecha >= '2021-12-01' and fecha <= '2021-12-31'
+order by fecha asc
+;
+
+select count(id_cliente)
+from [dbo].[factura]
+where fecha >= '2021-12-01' and fecha <= '2021-12-31'
+;
+
+--compras que han realizado los siguientes clientes
+select 
+a.id_cliente,
+a.nombre,
+d.id_producto,
+d.nombre
+from(select id_cliente, nombre
+	from [dbo].[cliente]
+	where id_cliente in (2,17,24,4,11)) as a
+	left join
+	(select id_cliente, id_detalle
+	from [dbo].[factura]) as b
+	on a.id_cliente = b.id_cliente
+	left join
+	(select id_detalle, id_producto
+	from [dbo].[detalle]) as c
+	on b.id_detalle = c. id_detalle
+	left join
+	(select id_producto, nombre
+	from [dbo].[producto]) as d
+	on c.id_producto = d.id_producto
+	;
+
+
+--Seleccionar el producto que más ventas ha tenido
+select a.nombre, a.id_producto, b. cantidad, b.precio 
+from [dbo].[producto] as a
+left join
+[dbo].[detalle] b
+on a.id_producto = b.id_producto
+order by b.cantidad desc
+;
+
+
+--¿Qué producto tienen más cantidad en stock?
+	select nombre,stock 
+	from [dbo].[producto]
+	order by stock desc
+;
+
+--Ordenar, de la más antigua a la más reciente, las compras que ha habido en la tienda
+select fecha, id_factura, id_detalle
+from [dbo].[factura]
+order by fecha asc
+;
+
+
+--Ordenar alfabéticamente los nombres de todos los clientes de la tienda
+select nombre from [dbo].[cliente]
+order by cast(nombre as varchar(max))
+;
+
+--Seleccionar cuáles productos pertenecen a cada categoría
+select id_categoria, nombre
+from [dbo].[categoria]
+where id_categoria in (2, 3, 7, 6, 10)
+;
+
+--Seleccionar los encargados de las sucursales de la tienda akira's boutique
+select encargado_sucursal 
+from sucursales
+;
+
+--Seleccionar los empleados que trabajan en una sucursal especifica
+SELECT nombre, apellido_paterno, apellido_materno, sucursal
+FROM empleados
+WHERE CAST(sucursal AS VARCHAR(MAX)) = 'Boutique Estilo Vanguardia'
+;
+
+
+--Que clientes son mayores a 30 años
+	select nombre, fec_nac
+	from [dbo].[cliente]
+	where fec_nac >= '1993-01-01'
+;
+
